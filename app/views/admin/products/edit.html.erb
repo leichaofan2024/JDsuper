@@ -1,5 +1,18 @@
 <div class="col-md-10">
   <h3>编辑商品</h3>
   <hr>
-  <%= render "form" %>
+  <div class="" style="padding-top:50px">
+    <%= simple_form_for [:admin,@product] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :quantity %>
+      <% if @product.image.present? %>
+        <span>目前商品图</span> <br>
+        <%= image_tag(@product.image.thumb.url) %>
+      <% end %>
+      <%= f.input :image, as: :file %>
+      <%= f.submit "Submit", data: { disable_with: "Submiting..."} %>
+    <% end %>
+  </div>
 </div>
