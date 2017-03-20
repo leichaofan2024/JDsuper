@@ -8,9 +8,10 @@
 
 puts "开始创建管理员账户"
 u = User.new
-u.email = "leichaofan2024@gmail"
+u.email = "leichaofan2024@gmail.com"
 u.password = "123456"
 u.password_confirmation = "123456"
+u.is_admin = true
 u.save
 
 puts "管理员创建完成！"
