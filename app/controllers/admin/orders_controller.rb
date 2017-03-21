@@ -19,7 +19,7 @@ class Admin::OrdersController < ApplicationController
     redirect_to :back
   end
   def shipped
-    @order = order.find(params[:id])
+    @order = Order.find(params[:id])
     @order.deliver!
     redirect_to :back
   end
@@ -32,6 +32,6 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.retuin_good!
     redirect_to :back
-  end 
+  end
 
 end
